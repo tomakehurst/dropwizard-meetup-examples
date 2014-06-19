@@ -1,0 +1,22 @@
+apply plugin: 'idea'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'io.dropwizard:dropwizard-core:0.7.0',
+            'io.dropwizard:dropwizard-client:0.7.0',
+            'io.dropwizard:dropwizard-testing:0.7.0',
+            'com.jayway.jsonpath:json-path-assert:0.9.1',
+            'com.google.guava:guava:17.0'
+    compile 'org.jsoup:jsoup:1.7.3'
+    testCompile "junit:junit:4.11", 'com.github.tomakehurst:wiremock:1.46'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
